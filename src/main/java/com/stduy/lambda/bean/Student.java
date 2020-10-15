@@ -1,21 +1,21 @@
 package com.stduy.lambda.bean;
 
-public class Student {
+public class Student implements Comparable<Student>{
 
 
     /**
      * 学号
      */
-    private long id;
+    private Integer id;
 
     private String name;
 
-    private int age;
+    private Integer age;
 
     /**
      * 年级
      */
-    private int grade;
+    private Integer grade;
 
     /**
      * 专业
@@ -27,11 +27,11 @@ public class Student {
      */
     private String school;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,19 +43,19 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public int getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 
@@ -75,7 +75,7 @@ public class Student {
         this.school = school;
     }
 
-    public Student(long id, String name, int age, int grade, String major, String school) {
+    public Student(Integer id, String name, Integer age, Integer grade, String major, String school) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -94,5 +94,11 @@ public class Student {
                 ", major='" + major + '\'' +
                 ", school='" + school + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Student s) {
+        return this.age - s.age;
     }
 }
